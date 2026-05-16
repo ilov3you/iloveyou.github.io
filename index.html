@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti ❤️</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            overflow:hidden;
+            background:black;
+            font-family:Arial, sans-serif;
+        }
+
+        canvas{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            opacity:0;
+            transition:1s;
+            z-index:1;
+        }
+
+        /* Pantalla inicial */
+        .start-screen{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+            background:linear-gradient(135deg, #000, #250012);
+            z-index:10;
+        }
+
+        .start-screen h1{
+            color:white;
+            margin-bottom:20px;
+            font-size:2rem;
+            text-align:center;
+            padding:20px;
+        }
+
+        .start-btn{
+            padding:15px 40px;
+            border:none;
+            border-radius:50px;
+            background:#ff2d75;
+            color:white;
+            font-size:1.2rem;
+            cursor:pointer;
+            transition:0.3s;
+            box-shadow:0 0 20px rgba(255,45,117,.5);
+        }
+
+        .start-btn:hover{
+            transform:scale(1.08);
+        }
+        /* Texto cinematográfico */
+.cinematic{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:black;
+    color:white;
+    font-size:clamp(2rem, 5vw, 4rem);
+    font-weight:300;
+    letter-spacing:3px;
+    text-align:center;
+    padding:20px;
+    z-index:20;
+    opacity:0;
+    transition:opacity 2s ease;
+    text-shadow:
+        0 0 20px rgba(255,255,255,.4),
+        0 0 50px rgba(255,100,150,.3);
+}
+
+.cinematic.show{
+    opacity:1;
+}
+
+.hidden{
+    display:none;
+}
+    </style>
+</head>
+<body>
+<!-- Texto cinematográfico -->
+<div id="cinematicText" class="cinematic hidden">
+    Para alguien muy especial ❤️
+</div>
+    <!-- Pantalla inicial -->
+    <div class="start-screen" id="startScreen">
+        <h1>Tengo algo bonito para ti ❤️</h1>
+        <button class="start-btn" id="startBtn">
+            Presiona aquí
+        </button>
+    </div>
+
+    <!-- Canvas -->
+    <canvas id="heart"></canvas>
+
+    <!-- Música -->
+    <audio id="bgMusic" loop>
+        <source src="re.mp3" type="audio/mp3">
+    </audio>
+
+    <script src="animacion.js"></script>
+
+</body>
+</html>
